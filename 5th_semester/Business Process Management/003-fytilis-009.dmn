@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="Definitions_1o1ss4j" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.3.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <decision id="Decision_17zflse" name="ΔΙΑΣΤΑΥΡΩΣΗ ΣΤΟΙΧΕΙΩΝ">
+    <informationRequirement id="InformationRequirement_10poxuy">
+      <requiredInput href="#InputData_178cs3g" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_125doa2">
+      <requiredInput href="#InputData_174wwm4" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0bc8do0">
+      <requiredInput href="#InputData_0ndq2xs" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1rg27xq">
+      <requiredInput href="#InputData_17ernq9" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_1q775eb">
+      <requiredKnowledge href="#BusinessKnowledgeModel_0u8tw0r" />
+    </knowledgeRequirement>
+    <decisionTable id="DecisionTable_0bxx0f5" hitPolicy="FIRST">
+      <input id="Input_1" label="Ε1">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0arh9vg">
+          <text>"ΝΑΙ","ΟΧΙ"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0p39ul8" label="Ε9" biodi:width="192">
+        <inputExpression id="LiteralExpression_18z0dww" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1wjwyo7">
+          <text>"ΝΑΙ","ΟΧΙ"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_11soh7e" label="ΒΕΒΑΙΩΣΗ ΣΠΟΥΔΩΝ">
+        <inputExpression id="LiteralExpression_1krsxio" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0ebra1r">
+          <text>"ΝΑΙ","ΟΧΙ"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0yay9rg" label="ΠΙΣΤΟΠΟΙΗΤΙΚΟ ΟΙΚ. ΚΑΤΑΣΤΑΣΗΣ">
+        <inputExpression id="LiteralExpression_15k8rnh" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_09rqlpu">
+          <text>"ΝΑΙ","ΟΧΙ"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="ΔΙΑΣΤΑΥΡΩΣΗ ΣΤΟΙΧΕΙΩΝ" typeRef="string" biodi:width="191">
+        <outputValues id="UnaryTests_1fqjlew">
+          <text>"ΠΛΗΡΗΣ","ΕΛΛΙΠΗΣ"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_01q6dlv">
+        <description>"ΝΑΙ" = Επισυνάπτεται το αρχείο στην αίτηση</description>
+        <inputEntry id="UnaryTests_1ehur01">
+          <text>"ΟΧΙ"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1csmyk0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1njaks7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13liy0v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bl7uik">
+          <text>"ΕΛΛΙΠΗΣ"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_030er1a">
+        <description>"ΟΧΙ" = Το αρχείο δεν επισυνάπτεται στην αίτηση</description>
+        <inputEntry id="UnaryTests_038pomk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mubw9l">
+          <text>"ΟΧΙ"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16r3jax">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1riq92o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bkl6ik">
+          <text>"ΕΛΛΙΠΗΣ"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jaz8p9">
+        <description>Ε1 = Έντυπο Δήλωσης φορολογίας εισοδήματος</description>
+        <inputEntry id="UnaryTests_0z10kkk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08sp82r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17fqa9j">
+          <text>"ΟΧΙ"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fgqcs2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rhd0in">
+          <text>"ΕΛΛΙΠΗΣ"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r7r6ux">
+        <description>Ε9 = Έντυπο Δήλωσης στοιχείων περιουσιακών ακινήτων (φοιτητή και γονέων)</description>
+        <inputEntry id="UnaryTests_0swos83">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gls421">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15kadsn">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eiynmv">
+          <text>"ΟΧΙ"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05u6je3">
+          <text>"ΕΛΛΙΠΗΣ"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ljb1y2">
+        <inputEntry id="UnaryTests_0gdpyt6">
+          <text>"ΝΑΙ"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uo7oen">
+          <text>"ΝΑΙ"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_010q023">
+          <text>"ΝΑΙ"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zt7vl5">
+          <text>"ΝΑΙ"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02seepr">
+          <text>"ΠΛΗΡΗΣ"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_178cs3g" name="Ε1" />
+  <inputData id="InputData_174wwm4" name="Ε9" />
+  <inputData id="InputData_0ndq2xs" name="ΠΙΣΤΟΠΟΙΗΤΙΚΟ ΟΙΚ. ΚΑΤΑΣΤΑΣΗΣ" />
+  <businessKnowledgeModel id="BusinessKnowledgeModel_0u8tw0r" name="ΜΕΘΟΔΟΣ ΕΛΕΓΧΟΥ&#10;(ΑΝ ΕΠΙΣΥΝΑΠΤΟΝΤΑΙ)">
+    <authorityRequirement id="AuthorityRequirement_1pt6iib">
+      <requiredAuthority href="#KnowledgeSource_0tp6dqo" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <knowledgeSource id="KnowledgeSource_0tp6dqo" name="ΕΓΚΥΚΛΙΟΣ&#10;Ν. 3220/2004" />
+  <inputData id="InputData_17ernq9" name="ΒΕΒΑΙΩΣΗ ΣΠΟΥΔΩΝ" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_17zflse">
+        <dc:Bounds height="80" width="180" x="620" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1dovf2w" dmnElementRef="InputData_178cs3g">
+        <dc:Bounds height="45" width="125" x="437" y="207" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_19glqi6" dmnElementRef="InputData_174wwm4">
+        <dc:Bounds height="45" width="125" x="587" y="207" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1nl7tpb" dmnElementRef="InputData_0ndq2xs">
+        <dc:Bounds height="45" width="125" x="897" y="207" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1uotmfu" dmnElementRef="InformationRequirement_10poxuy">
+        <di:waypoint x="500" y="207" />
+        <di:waypoint x="656" y="180" />
+        <di:waypoint x="656" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_01giba0" dmnElementRef="InformationRequirement_125doa2">
+        <di:waypoint x="650" y="207" />
+        <di:waypoint x="692" y="180" />
+        <di:waypoint x="692" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0mtxdjx" dmnElementRef="InformationRequirement_0bc8do0">
+        <di:waypoint x="960" y="207" />
+        <di:waypoint x="764" y="180" />
+        <di:waypoint x="764" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0stzn1b" dmnElementRef="BusinessKnowledgeModel_0u8tw0r">
+        <dc:Bounds height="46" width="135" x="372" y="107" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_02mtypx" dmnElementRef="KnowledgeSource_0tp6dqo">
+        <dc:Bounds height="63" width="100" x="160" y="98" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ydxatm" dmnElementRef="KnowledgeRequirement_1q775eb">
+        <di:waypoint x="507" y="130" />
+        <di:waypoint x="620" y="130" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0048qur" dmnElementRef="AuthorityRequirement_1pt6iib">
+        <di:waypoint x="260" y="130" />
+        <di:waypoint x="370" y="130" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1fgpj2g" dmnElementRef="InputData_17ernq9">
+        <dc:Bounds height="45" width="125" x="748" y="207" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0gps16v" dmnElementRef="InformationRequirement_1rg27xq">
+        <di:waypoint x="811" y="207" />
+        <di:waypoint x="728" y="180" />
+        <di:waypoint x="728" y="160" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_03r6xkv" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.3.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <decision id="Decision_0vwk7fb" name="ΧΟΡΗΓΗΣΗ ΣΤΕΓΑΣΤΙΚΟΥ ΕΠΙΔΟΜΑΤΟΣ">
+    <informationRequirement id="InformationRequirement_0g4slxg">
+      <requiredDecision href="#Decision_1gxsxfz" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0o7gut8">
+      <requiredDecision href="#Decision_1v25gs0" />
+    </informationRequirement>
+    <authorityRequirement id="AuthorityRequirement_0rgpstt">
+      <requiredAuthority href="#KnowledgeSource_03fix4y" />
+    </authorityRequirement>
+    <decisionTable id="DecisionTable_1bx7r8h" hitPolicy="FIRST" biodi:annotationsWidth="400">
+      <input id="Input_1" label="ΟΙΚΟΝΟΜΙΚΑ ΚΡΙΤΗΡΙΑ" biodi:width="209" camunda:inputVariable="financial_obligations">
+        <inputExpression id="InputExpression_1" typeRef="boolean">
+          <text>financial_obligations</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_00tn9b3" label="ΑΚΑΔΗΜΑΙΚΑ ΚΡΙΤΗΡΙΑ" biodi:width="235" camunda:inputVariable="academic_obligations">
+        <inputExpression id="LiteralExpression_0rielmr" typeRef="boolean">
+          <text>academic_obligations</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="ΧΟΡΗΓΗΣΗ ΣΤΕΓΑΣΤΙΚΟΥ ΕΠΙΔΟΜΑΤΟΣ" name="grant_of_housing_benefit" typeRef="string" biodi:width="336">
+        <outputValues id="UnaryTests_1b5a81h">
+          <text>"approved","not approved"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0rsx99f">
+        <inputEntry id="UnaryTests_0i042li">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m1mjiu">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09xpkne">
+          <text>"not approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ctmelp">
+        <description>false = "μη πληρότητα"</description>
+        <inputEntry id="UnaryTests_0gqa8wx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01dtoip">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zm20s7">
+          <text>"not approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17vzix3">
+        <description>true = "πληρότητα"</description>
+        <inputEntry id="UnaryTests_1sxr1uw">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15ooe8z">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ekwe2j">
+          <text>"approved"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_03fix4y" name="ΕΓΚΥΚΛΙΟΣ&#10;Ν. 3220/2004" />
+  <inputData id="InputData_1t77gsm" name="ΑΚΙΝΗΤΗ ΠΕΡΙΟΥΣΙΑ" />
+  <inputData id="InputData_0n5a7wp" name="ΕΙΣΟΔΗΜΑ" />
+  <inputData id="InputData_0qxc8js" name="ΤΟΠΟΘΕΣΙΑ ΚΥΡΙΑΣ ΚΑΤΟΙΚΙΑΣ" />
+  <knowledgeSource id="KnowledgeSource_0phkg99" name="ΛΕΙΤΟΥΡΓΙΑ ΕΦΑΡΜΟΓΗΣ" />
+  <businessKnowledgeModel id="BusinessKnowledgeModel_0tsfpf2" name="ΣΥΓΚΕΝΤΡΩΣΗ ΚΑΙ ΑΞΙΟΛΟΓΗΣΗ ΔΙΚΑΙΟΛΟΓΗΤΙΚΩΝ">
+    <authorityRequirement id="AuthorityRequirement_001s66i">
+      <requiredAuthority href="#KnowledgeSource_0phkg99" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <inputData id="InputData_1uoo0bj" name="ΜΑΘΗΜΑΤΑ ΕΩΣ ΤΟ ΤΡΕΧΩΝ ΕΞΑΜΗΝΟ" />
+  <decision id="Decision_1gxsxfz" name="ΟΙΚΟΝΟΜΙΚΑ ΚΡΙΤΗΡΙΑ">
+    <informationRequirement id="InformationRequirement_0byrn63">
+      <requiredInput href="#InputData_1t77gsm" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1gftdnv">
+      <requiredInput href="#InputData_0n5a7wp" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0pxpwx5">
+      <requiredInput href="#InputData_0qxc8js" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1x8y98d">
+      <requiredInput href="#InputData_189zdjx" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_1unyyk5">
+      <requiredKnowledge href="#BusinessKnowledgeModel_0tsfpf2" />
+    </knowledgeRequirement>
+    <decisionTable id="DecisionTable_1gs7wn7" hitPolicy="FIRST">
+      <input id="InputClause_041kl1k" label="ΗΛΙΚΙΑ" biodi:width="150">
+        <inputExpression id="LiteralExpression_1dmoqve" typeRef="integer">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1pft805" label="ΕΙΣΟΔΗΜΑ" biodi:width="150">
+        <inputExpression id="LiteralExpression_15p488j" typeRef="long">
+          <text>income</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_12pgsvt" label="ΤΟΠΟΘΕΣΙΑ ΚΥΡΙΑΣ ΚΑΤΟΙΚΙΑΣ" biodi:width="266">
+        <inputExpression id="LiteralExpression_1dlwy3o" typeRef="string">
+          <text>location</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_07a69gn">
+          <text>"in city","away from city"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_084tzjg" label="ΑΚΙΝΗΤΗ ΠΕΡΙΟΥΣΙΑ">
+        <inputExpression id="LiteralExpression_1ktca5m" typeRef="integer">
+          <text>property</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_13mg0a1" label="ΟΙΚΟΝΟΜΙΚΑ ΚΡΙΤΗΡΙΑ" name="financial_obligations" typeRef="boolean" biodi:width="243" />
+      <rule id="DecisionRule_01olycx">
+        <description>Εισόδημα σε ευρώ (€)</description>
+        <inputEntry id="UnaryTests_0eiwvmi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_095chup">
+          <text>&gt;30000 </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sbldqt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ffykwm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b36vxf">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01mywdm">
+        <description>"in city" = "Εντός πόλης φοίτησης"</description>
+        <inputEntry id="UnaryTests_1r0dutx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lycxgp">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03f4zs6">
+          <text>"in city"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xgoz3d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1avy5jb">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0shb8wx">
+        <description>Ακίνητη περιουσία σε τ.μ.</description>
+        <inputEntry id="UnaryTests_1wfm0mk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xohlmi">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cexiw5">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j6qzhp">
+          <text>&gt; 200 </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1afi7g3">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y7ck1p">
+        <description>"away from city" = "Εκτός πόλης φοίτησης"</description>
+        <inputEntry id="UnaryTests_1d67bzz">
+          <text>&lt; 25</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07xjuv6">
+          <text>&lt; 30000 </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12qh64k">
+          <text>"away from city"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lry6yd">
+          <text>&lt; 200 </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z6tm98">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tj8bd5">
+        <inputEntry id="UnaryTests_18spk80">
+          <text>&gt;= 25</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1271jzv">
+          <text>&lt; 15000 </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xg89px">
+          <text>"away from city"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04wm5s0">
+          <text>&lt;200 </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_169fu9u">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1v25gs0" name="ΑΚΑΔΗΜΑΙΚΑ ΚΡΙΤΗΡΙΑ">
+    <informationRequirement id="InformationRequirement_0uwl67z">
+      <requiredDecision href="#Decision_1kzefx4" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1xyiloa">
+      <requiredDecision href="#Decision_031znm0" />
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_1qyv98w">
+      <requiredKnowledge href="#BusinessKnowledgeModel_0tsfpf2" />
+    </knowledgeRequirement>
+    <decisionTable id="DecisionTable_0fxnvpd" hitPolicy="FIRST" biodi:annotationsWidth="400">
+      <input id="InputClause_1a6fmdf" label="ΕΚΠΑΙΔΕΥΤΙΚΟ ΚΡΙΤΗΡΙΟ" biodi:width="246" camunda:inputVariable="edu_criteria">
+        <inputExpression id="LiteralExpression_16129rf" typeRef="boolean">
+          <text>edu_criteria</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1fnmzsv" label="ΧΡΟΝΙΚΟ ΚΡΙΤΗΡΙΟ" biodi:width="190" camunda:inputVariable="time_criteria">
+        <inputExpression id="LiteralExpression_0vdb5lc" typeRef="boolean">
+          <text>time_criteria</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0bjq2kc" label="ΑΚΑΔΗΜΑΙΚΑ ΚΡΙΤΗΡΙΑ" name="academic_obligations" typeRef="boolean" biodi:width="236" />
+      <rule id="DecisionRule_1gox6yy">
+        <description>false = "μη πληρότητα"</description>
+        <inputEntry id="UnaryTests_1w6seld">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06v5bb9">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jrhx4f">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x5l5pw">
+        <inputEntry id="UnaryTests_1k3gwyk">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yest5j">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19pcj93">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nwroqn">
+        <inputEntry id="UnaryTests_1j7tqw3">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_188w7x5">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10l3p9y">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1n3fx3q">
+        <description>true = "πληρότητα"</description>
+        <inputEntry id="UnaryTests_0zb9lqo">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fu0yge">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03dhxax">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_189zdjx" name="ΗΛΙΚΙΑ" />
+  <decision id="Decision_1kzefx4" name="ΧΡΟΝΙΚΟ ΚΡΙΤΗΡΙΟ">
+    <informationRequirement id="InformationRequirement_1awr4hr">
+      <requiredInput href="#InputData_1x7kqs5" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0apukm2">
+      <requiredInput href="#InputData_15vwwiq" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0srwkln">
+      <input id="InputClause_1m31uj9" label="ΕΤΗ ΦΟΙΤΗΣΗΣ ΣΧΟΛΗΣ">
+        <inputExpression id="LiteralExpression_0y97977" typeRef="integer">
+          <text>uni_years</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0pcglft" label="ΤΡΕΧΩΝ ΕΤΟΣ ΦΟΙΤΗΣΗΣ">
+        <inputExpression id="LiteralExpression_06dzr7r" typeRef="integer">
+          <text>current_year</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_191itzr" label="ΧΡΟΝΙΚΟ ΚΡΙΤΗΡΙΟ" name="time_criteria" typeRef="boolean" />
+      <rule id="DecisionRule_0dpzfwa">
+        <description>Το τρέχων έτος φοίτησης πρέπει να είναι μικρότερο από ν+2 έτη της σχολής, για να δικαιούται το επίδομα</description>
+        <inputEntry id="UnaryTests_0qsl6j0">
+          <text>4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dordak">
+          <text>&lt;= 6</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0q8qo6y">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fl097i">
+        <inputEntry id="UnaryTests_092y75j">
+          <text>4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nzm42k">
+          <text>&gt; 6</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fc31yy">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1igrrps">
+        <inputEntry id="UnaryTests_11u2qgr">
+          <text>5</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oz3h80">
+          <text>&lt;= 7</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qaw3fb">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fa4dp4">
+        <inputEntry id="UnaryTests_0ypbi0n">
+          <text>5</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_129c7id">
+          <text>&gt; 7</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13mth6s">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0aapie5">
+        <inputEntry id="UnaryTests_11bn7eu">
+          <text>6</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17dwd2l">
+          <text>&lt;= 8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07rj3yh">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05k4pcc">
+        <inputEntry id="UnaryTests_15s7qmh">
+          <text>6</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rxw6wg">
+          <text>&gt; 8</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lwqb41">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_1x7kqs5" name="ΤΡΕΧΩΝ ΕΤΟΣ ΦΟΙΤΗΣΗΣ" />
+  <inputData id="InputData_15vwwiq" name="ΕΤΗ ΦΟΙΤΗΣΗΣ ΣΧΟΛΗΣ" />
+  <decision id="Decision_031znm0" name="ΕΚΠΑΙΔΕΥΤΙΚΟ ΚΡΙΤΗΡΙΟ">
+    <informationRequirement id="InformationRequirement_02e9s40">
+      <requiredInput href="#InputData_1uoo0bj" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_01d77ne">
+      <requiredInput href="#InputData_009whgo" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_105bf6f">
+      <input id="InputClause_14ctmet" label="ΜΑΘΗΜΑΤΑ ΕΩΣ ΤΟ ΤΡΕΧΩΝ ΕΞΑΜΗΝΟ">
+        <inputExpression id="LiteralExpression_04caa19" typeRef="integer">
+          <text>classes_offered</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_18hipah" label="ΠΕΡΑΣΜΕΝΑ ΜΑΘΗΜΑΤΑ">
+        <inputExpression id="LiteralExpression_0jxdp8x" typeRef="integer">
+          <text>classes_passed</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0krc6t2" label="ΕΚΠΑΙΔΕΥΤΙΚΟ ΚΡΙΤΗΡΙΟ" name="edu_criteria" typeRef="boolean" />
+      <rule id="DecisionRule_11bezmr">
+        <inputEntry id="UnaryTests_1al6zu5">
+          <text>[1..7]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mmiebq">
+          <text>&gt;= 4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qqzcxe">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tehc8p">
+        <inputEntry id="UnaryTests_1pxzw6d">
+          <text>[1..7]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y8tg93">
+          <text>&lt; 4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r824yw">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06uyudk">
+        <inputEntry id="UnaryTests_1ww87nz">
+          <text>[8..14]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cw6ftl">
+          <text>&gt;= 7</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ajihce">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cnc65n">
+        <inputEntry id="UnaryTests_0fful76">
+          <text>[8..14]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m0mkq7">
+          <text>&lt; 7</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09ifsor">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ysh3lf">
+        <inputEntry id="UnaryTests_1b2q5mp">
+          <text>[15..21]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gie5fb">
+          <text>&gt;= 11</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zywd3c">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16pmwfa">
+        <inputEntry id="UnaryTests_12l9uab">
+          <text>[15..21]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19ya59a">
+          <text>&lt; 11</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p50cjt">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16ej9e6">
+        <inputEntry id="UnaryTests_115a7hv">
+          <text>[22..28]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jcshz1">
+          <text>&gt;= 14</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gxgoc0">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_173cie6">
+        <inputEntry id="UnaryTests_0fpxefp">
+          <text>[22..28]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_090hmi2">
+          <text>&lt; 14</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11fe7ud">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tep7gy">
+        <inputEntry id="UnaryTests_18cqxw4">
+          <text>[29..35]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uftgnf">
+          <text>&gt;= 18</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yo0jfc">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ubawvu">
+        <inputEntry id="UnaryTests_19j36tj">
+          <text>[29..35]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f8x4jn">
+          <text>&lt; 18</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00mpl69">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q6ftd4">
+        <inputEntry id="UnaryTests_0z2a68o">
+          <text>[36..42]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0frpd5w">
+          <text>&gt;= 21</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dn3ioz">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vgisui">
+        <inputEntry id="UnaryTests_1mmrbf8">
+          <text>[36..42]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06u84fe">
+          <text>&lt; 21</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gj1apm">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12m6ozb">
+        <inputEntry id="UnaryTests_1s7xho7">
+          <text>[43..49]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vun61m">
+          <text>&gt;= 25</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qnx07e">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0exrppb">
+        <inputEntry id="UnaryTests_10u130u">
+          <text>[43..49]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0947u3d">
+          <text>&lt; 25</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lw0agy">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yi9o9u">
+        <inputEntry id="UnaryTests_19pz3v9">
+          <text>[50..56]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05keidw">
+          <text>&gt;= 28</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ogcda1">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08wy1gs">
+        <inputEntry id="UnaryTests_0hnjc7q">
+          <text>[50..56]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0py2co7">
+          <text>&lt; 28</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dx54cs">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13eh3n3">
+        <inputEntry id="UnaryTests_18jfh21">
+          <text>[57..63]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bc4t8i">
+          <text>&gt;= 32</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k99zfo">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_172ul14">
+        <inputEntry id="UnaryTests_1xqei9n">
+          <text>[57..63]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08b0pqt">
+          <text>&lt; 32</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u1y9t1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vqakdt">
+        <inputEntry id="UnaryTests_0rsycow">
+          <text>[64..70]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vlwuub">
+          <text>&gt;= 35</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mvtkrp">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qra6mp">
+        <inputEntry id="UnaryTests_0pqnb26">
+          <text>[64..70]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zi5yk7">
+          <text>&lt; 35</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sjxaji">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ep6waz">
+        <inputEntry id="UnaryTests_1l0a888">
+          <text>[71..77]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15cl5nn">
+          <text>&gt;= 39</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sodsio">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1hj6bip">
+        <inputEntry id="UnaryTests_0mzsbqm">
+          <text>[71..77]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_050l9fb">
+          <text>&lt; 39</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02skrp4">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00ztgpo">
+        <inputEntry id="UnaryTests_1b70gj5">
+          <text>[78..84]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sjat3n">
+          <text>&gt;= 42</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cauzvm">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1llpbyc">
+        <inputEntry id="UnaryTests_0ze2oio">
+          <text>[78..84]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uc4dms">
+          <text>&lt; 42</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x0l9x9">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_009whgo" name="ΠΕΡΑΣΜΕΝΑ ΜΑΘΗΜΑΤΑ" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_0vwk7fb">
+        <dc:Bounds height="80" width="180" x="890" y="81" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0uq0uow" dmnElementRef="KnowledgeSource_03fix4y">
+        <dc:Bounds height="63" width="100" x="560" y="89" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0gmsmur" dmnElementRef="AuthorityRequirement_0rgpstt">
+        <di:waypoint x="660" y="121" />
+        <di:waypoint x="890" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0gk6e19" dmnElementRef="InformationRequirement_0g4slxg">
+        <di:waypoint x="1220" y="290" />
+        <di:waypoint x="1010" y="181" />
+        <di:waypoint x="1010" y="161" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0w64hxv" dmnElementRef="InputData_1t77gsm">
+        <dc:Bounds height="45" width="125" x="1060" y="457" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1fsgs66" dmnElementRef="InformationRequirement_0byrn63">
+        <di:waypoint x="1123" y="457" />
+        <di:waypoint x="1202" y="390" />
+        <di:waypoint x="1202" y="370" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0vlrfew" dmnElementRef="InputData_0n5a7wp">
+        <dc:Bounds height="45" width="125" x="887" y="457" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1uw6j6x" dmnElementRef="InformationRequirement_1gftdnv">
+        <di:waypoint x="950" y="457" />
+        <di:waypoint x="1166" y="390" />
+        <di:waypoint x="1166" y="370" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_18eh03w" dmnElementRef="InputData_0qxc8js">
+        <dc:Bounds height="45" width="125" x="1227" y="457" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0lp7ndd" dmnElementRef="InformationRequirement_0pxpwx5">
+        <di:waypoint x="1290" y="457" />
+        <di:waypoint x="1238" y="390" />
+        <di:waypoint x="1238" y="370" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0y2z5v7" dmnElementRef="KnowledgeSource_0phkg99">
+        <dc:Bounds height="63" width="100" x="910" y="228" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0r9e4ae" dmnElementRef="BusinessKnowledgeModel_0tsfpf2">
+        <dc:Bounds height="46" width="135" x="882" y="317" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1jd9qfy" dmnElementRef="InputData_1uoo0bj">
+        <dc:Bounds height="45" width="125" x="697" y="577" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_09y7x9h" dmnElementRef="AuthorityRequirement_001s66i">
+        <di:waypoint x="958" y="291" />
+        <di:waypoint x="951" y="317" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1xj6kr8" dmnElementRef="KnowledgeRequirement_1unyyk5">
+        <di:waypoint x="1017" y="339" />
+        <di:waypoint x="1130" y="330" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0710atj" dmnElementRef="Decision_1gxsxfz">
+        <dc:Bounds height="80" width="180" x="1130" y="290" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0lmae7z" dmnElementRef="Decision_1v25gs0">
+        <dc:Bounds height="80" width="180" x="520" y="290" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_15d2bzp" dmnElementRef="InputData_189zdjx">
+        <dc:Bounds height="45" width="125" x="1387" y="457" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1hy7lu9" dmnElementRef="InformationRequirement_1x8y98d">
+        <di:waypoint x="1450" y="457" />
+        <di:waypoint x="1274" y="390" />
+        <di:waypoint x="1274" y="370" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0lf9nld" dmnElementRef="KnowledgeRequirement_1qyv98w">
+        <di:waypoint x="882" y="346" />
+        <di:waypoint x="700" y="342" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1curtcx" dmnElementRef="InformationRequirement_0o7gut8">
+        <di:waypoint x="610" y="290" />
+        <di:waypoint x="950" y="181" />
+        <di:waypoint x="950" y="161" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0agqllx" dmnElementRef="Decision_1kzefx4">
+        <dc:Bounds height="80" width="180" x="230" y="450" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1e96sse" dmnElementRef="InputData_1x7kqs5">
+        <dc:Bounds height="45" width="125" x="157" y="577" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0ix6qse" dmnElementRef="InformationRequirement_1awr4hr">
+        <di:waypoint x="220" y="577" />
+        <di:waypoint x="290" y="550" />
+        <di:waypoint x="290" y="530" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1hvyzfy" dmnElementRef="InformationRequirement_0uwl67z">
+        <di:waypoint x="320" y="450" />
+        <di:waypoint x="580" y="390" />
+        <di:waypoint x="580" y="370" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_05rnqgi" dmnElementRef="InputData_15vwwiq">
+        <dc:Bounds height="45" width="125" x="317" y="577" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ryekn7" dmnElementRef="InformationRequirement_0apukm2">
+        <di:waypoint x="380" y="577" />
+        <di:waypoint x="350" y="550" />
+        <di:waypoint x="350" y="530" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0xdcr7r" dmnElementRef="InformationRequirement_1xyiloa">
+        <di:waypoint x="650" y="450" />
+        <di:waypoint x="640" y="390" />
+        <di:waypoint x="640" y="370" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0apgjgb" dmnElementRef="Decision_031znm0">
+        <dc:Bounds height="80" width="180" x="560" y="450" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1ijbqko" dmnElementRef="InformationRequirement_02e9s40">
+        <di:waypoint x="760" y="577" />
+        <di:waypoint x="680" y="550" />
+        <di:waypoint x="680" y="530" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_14wzojn" dmnElementRef="InputData_009whgo">
+        <dc:Bounds height="45" width="125" x="527" y="577" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1xfiky4" dmnElementRef="InformationRequirement_01d77ne">
+        <di:waypoint x="590" y="577" />
+        <di:waypoint x="620" y="550" />
+        <di:waypoint x="620" y="530" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
