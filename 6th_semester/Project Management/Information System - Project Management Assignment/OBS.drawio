@@ -1,0 +1,157 @@
+<mxfile host="app.diagrams.net" modified="2023-04-19T18:31:29.807Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="4lsML7IsTWziMmU2Xgw4" version="21.1.7" type="device">
+  <diagram name="Page-1" id="97916047-d0de-89f5-080d-49f4d83e522f">
+    <mxGraphModel dx="2345" dy="998" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8" target="ci2Nv6FwJEfbYx_gVAA_-71" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="720" />
+              <mxPoint x="105" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8" target="ci2Nv6FwJEfbYx_gVAA_-70" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="720" />
+              <mxPoint x="270" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" value="ΥΠΕΥΘΥΝΟΣ&#xa;ΑΝΑΛΥΣΗΣ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="120" y="625.5" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="ΣΧΕΔΙΑΣΤΗΣ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="410" y="760" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="561" y="720" />
+              <mxPoint x="480" y="720" />
+            </Array>
+            <mxPoint x="480" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="13" target="14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="561" y="720" />
+              <mxPoint x="654" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="ΥΠΕΥΘΥΝΟΣ&#xa;ΣΧΕΔΙΑΣΗΣ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="492" y="625.5" width="138" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="ΑΡΧΙΤΕΚΤΟΝΑΣ&#xa;ΛΟΓΙΣΜΙΚΟΥ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="580" y="760" width="148" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="18" target="24" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="720" />
+              <mxPoint x="840" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="18" target="ci2Nv6FwJEfbYx_gVAA_-65" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="740" />
+              <mxPoint x="980" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d9ROT9v1v9YE3gyeTDci-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="720" />
+              <mxPoint x="1135" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" value="ΥΠΕΥΘΥΝΟΣ&#xa;ΥΛΟΠΟΙΗΣΗΣ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="910" y="625.5" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="ΥΠΕΥΘΥΝΟΣ &#xa;ΠΡΟΣΤΑΣΙΑΣ &#xa;ΠΡΟΣΩΠΙΚΩΝ &#xa;ΔΕΔΟΜΕΝΩΝ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="1070" y="757.25" width="130" height="75.5" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="23" target="ci2Nv6FwJEfbYx_gVAA_-72" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1420" y="720" />
+              <mxPoint x="1500" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.458;entryY=-0.031;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="23" target="ci2Nv6FwJEfbYx_gVAA_-68" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1420" y="720" />
+              <mxPoint x="1334" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" value="ΥΠΕΥΘΥΝΟΣ&#xa;ΤΕΧΝΙΚΗΣ&#xa;ΥΠΟΣΤΗΡΙΞΗΣ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="1350" y="625.5" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="ΥΠΕΥΘΥΝΟΣ&#xa; ΒΑΣΗΣ&#xa;ΔΕΔΟΜΕΝΩΝ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="780" y="761.13" width="110" height="67.75" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="792" y="560" />
+              <mxPoint x="190" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="792" y="560" />
+              <mxPoint x="561" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="23" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="792" y="560" />
+              <mxPoint x="1420" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d9ROT9v1v9YE3gyeTDci-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2" target="18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="792" y="560" />
+              <mxPoint x="980" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2" value="ΥΠΕΥΘΥΝΟΣ &#xa;ΕΡΓΟΥ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="720" y="420" width="143.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-65" value="ΠΡΟΓΡΑΜΜΑΤΙΣΤΗΣ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="910" y="762.75" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-68" value="ΤΜΗΜΑ &#xa;ΕΚΠΑΙΔΕΥΣΗΣ&#xa;ΑΝΘΡΩΠΙΝΟΥ&#xa;ΔΥΝΑΜΙΚΟΥ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="1270" y="765" width="140" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-70" value="ΑΝΑΛΥΤΗΣ&#xa;ΑΠΑΙΤΗΣΕΩΝ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="200" y="765" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-71" value="ΑΝΑΛΥΤΗΣ&#xa;ΔΙΑΔΙΚΑΣΙΩΝ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="30" y="757.75" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ci2Nv6FwJEfbYx_gVAA_-72" value="ΤΜΗΜΑ&#xa;ΔΙΑΧΕΙΡΗΣΗΣ &#xa;ΠΟΡΩΝ" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="1430" y="765.01" width="140" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
